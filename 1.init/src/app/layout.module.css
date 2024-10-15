@@ -9,3 +9,8 @@
 .nav a {
   padding: 0 8px;
 }
+
+.section.nav a {
+  padding: 0 8px;
+  border: 1px solid pink;
+}
