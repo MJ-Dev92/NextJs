@@ -1,6 +1,15 @@
 import Link from "next/link";
 import "./globals.css";
 import styles from "./layout.module.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "무언가 제품 사이트",
+  description: "무언가 제품을 판매하는 곳입니다.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 export default function RootLayout({
   children,
