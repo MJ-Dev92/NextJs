@@ -19,11 +19,11 @@ export default function PantsPage({ params: { slug } }: Props) {
   return <h1>{product} 제품 설명 페이지</h1>;
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   // 모든 제품의 페이지들을 미리 만들어 둘 수 있게 해줄거임 (SSG)
-  const products = getProducts();
+  const products = await getProducts();
 
   return products.map((product) => ({
-    slug: product,
+    slug: product.id,
   }));
 }
