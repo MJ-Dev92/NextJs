@@ -1,14 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { Product, getProducts } from "@/service/products";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(
+type Data = {
+  name: string;
+};
+
+export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Product[]>
+  res: NextApiResponse<Data>
 ) {
-  if (req.method === "GET") {
-    const products = await getProducts();
-    return res.status(200).json(products);
-  }
-  res.status(200);
+  res.status(200).json({ name: "John Doe" });
 }
